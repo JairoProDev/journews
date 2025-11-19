@@ -1,0 +1,55 @@
+// Utilidades para manejar la sesión del usuario
+import { getServerSession } from 'next-auth/next'
+import { authOptions } from './config'
+import type { Session } from 'next-auth'
+
+/**
+ * Obtiene la sesión del usuario en Server Components
+ */
+export async function getSession(): Promise<Session | null> {
+  return await getServerSession(authOptions)
+}
+
+/**
+ * Obtiene el usuario actual o lanza un error si no está autenticado
+ */
+export async function getCurrentUser() {
+  const session = await getSession()
+
+  if (!session?.user) {
+    throw new Error('No autenticado')
+  }
+
+  return session.user
+}
+
+/**
+ * Verifica si el usuario está autenticado
+ */
+export async function isAuthenticated(): Promise<boolean> {
+  const session = await getSession()
+  return !!session?.user
+}
+
+/**
+ * Verifica si el usuario tiene un rol específico
+ */
+export async function hasRole(role: string): Promise<boolean> {
+  const session = await getSession()
+  return session?.user?.role === role
+}
+
+/**
+ * Verifica si el usuario es admin
+ */
+export async function isAdmin(): Promise<boolean> {
+  return hasRole('ADMIN')
+}
+
+/**
+ * Verifica si el usuario es creador
+ */
+export async function isCreator(): Promise<boolean> {
+  const session = await getSession()
+  return session?.user?.role === 'CREATOR' || session?.user?.role === 'ADMIN'
+}
