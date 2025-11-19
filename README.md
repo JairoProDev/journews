@@ -165,27 +165,37 @@ Ver `prisma/schema.prisma` para el schema completo.
 
 ## 📊 Roadmap
 
-### v0.1 (MVP) - En Desarrollo
+### v0.1 (MVP) - ✅ COMPLETADO
 - [x] Landing page con propuesta de valor
 - [x] Diseño del schema de base de datos
 - [x] Configuración del proyecto base
-- [ ] Sistema de autenticación
-- [ ] Feed vertical básico
-- [ ] Crear y visualizar Dossiers
-- [ ] Sistema JournScore manual (v1.0)
+- [x] Sistema de componentes UI completo
+- [x] Sistema de autenticación (login, register)
+- [x] Feed vertical tipo TikTok con scroll infinito
+- [x] Crear y visualizar Dossiers completos
+- [x] Sistema JournScore visual (integrado en UI)
+- [x] Perfil de creadores públicos
+- [x] Dashboard de creadores
+- [x] Página de creación de Dossiers
+- [x] Perfil de usuario
+- [x] Configuración completa
+- [x] Explore y Trending pages
 
-### v0.2 (Alpha)
-- [ ] Panel de creadores
-- [ ] Sistema de verificación básico
+### v0.2 (Alpha) - En Desarrollo
+- [ ] Integración de NextAuth completo (OAuth)
+- [ ] API routes funcionales con Prisma
+- [ ] Sistema de verificación con workflow
 - [ ] Subida de media (videos/imágenes)
-- [ ] Búsqueda y filtros
-- [ ] Perfil de usuarios
+- [ ] Búsqueda avanzada y filtros
+- [ ] Sistema de comentarios
+- [ ] Sistema de notificaciones
 
 ### v0.3 (Beta)
 - [ ] Integración con IA para asistencia
-- [ ] Sistema de monetización
-- [ ] Analytics para creadores
-- [ ] Sistema de reacciones
+- [ ] Sistema de monetización (suscripciones, propinas)
+- [ ] Analytics avanzados para creadores
+- [ ] Sistema de reacciones completo
+- [ ] Timeline editor interactivo
 - [ ] PWA para móvil
 
 ### v1.0 (Producción)
@@ -194,6 +204,54 @@ Ver `prisma/schema.prisma` para el schema completo.
 - [ ] Internacionalización completa
 - [ ] Sistema avanzado de IA
 - [ ] Marketplace de medios
+
+## 📄 Páginas Implementadas (13 páginas)
+
+### Públicas
+1. **Landing Page** (`/`) - Propuesta de valor y call to action
+2. **Login** (`/auth/login`) - Autenticación de usuarios
+3. **Register** (`/auth/register`) - Registro de nuevos usuarios
+
+### Feed y Descubrimiento
+4. **Feed** (`/feed`) - Feed vertical tipo TikTok con scroll infinito
+5. **Explore** (`/explore`) - Trending topics y top creators
+6. **Trending** (`/trending`) - Dossiers más populares con ranking
+
+### Dossiers
+7. **Dossier Detail** (`/dossier/[slug]`) - Vista completa con timeline, fuentes, key figures
+
+### Creadores
+8. **Creator Profile** (`/creator/[username]`) - Perfil público de creadores
+9. **Creator Dashboard** (`/dashboard`) - Panel de control de creadores
+10. **Create Dossier** (`/dashboard/create`) - Formulario de creación de Dossiers
+
+### Usuario
+11. **User Profile** (`/profile`) - Perfil personal del usuario
+12. **Settings** (`/settings`) - Configuración completa (perfil, cuenta, notificaciones, privacidad, apariencia)
+
+## 🎨 Componentes UI (10+ componentes)
+
+Todos los componentes incluyen:
+- ✅ Variantes múltiples
+- ✅ Dark mode support
+- ✅ Responsive design
+- ✅ TypeScript types
+- ✅ Accesibilidad básica
+
+### Componentes Base
+- `Button` - Botones con variantes (primary, secondary, outline, ghost, etc.)
+- `Input` - Campos de texto con labels y validación
+- `Textarea` - Áreas de texto multilinea
+- `Card` - Sistema de tarjetas (header, content, footer)
+- `Badge` - Insignias con variantes de color
+- `Avatar` - Avatares con fallback de iniciales
+- `Skeleton` - Loading skeletons
+- `Spinner` - Loading spinner
+
+### Componentes Especializados
+- `Navbar` - Navegación responsive con menú de perfil
+- `FeedCard` - Tarjeta de feed con toda la información del dossier
+- `SessionProvider` - Provider de sesión simplificado
 
 ## 👥 Equipo
 
